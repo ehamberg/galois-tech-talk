@@ -23,7 +23,7 @@
 
 # Phylogenetics
 
-Phylogenetics is he study of evolutionary relationships among groups of
+Phylogenetics is the study of evolutionary relationships among groups of
 organisms (e.g.  species, populations).
 
 \begin{center}
