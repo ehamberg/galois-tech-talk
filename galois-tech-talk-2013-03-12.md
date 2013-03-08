@@ -8,3 +8,15 @@
 >   (Specialization: Artificial Intelligence methods)
 > - Previously at ARM writing GPU drivers
 > - *Not* a biologist (but played on in grad school)
+
+# This talk
+
+- Research done for my Master's thesis
+- A mix of genetics and artificial intelligence methods
+
+## Outline
+- Phylogenetics
+- Phylogenetic inference
+- Evolutionary algorithms
+- Using an evolutionary algorithm for phylogenetic inference
+- Conclusion
