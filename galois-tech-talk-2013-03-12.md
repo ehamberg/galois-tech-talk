@@ -20,3 +20,12 @@
 - Evolutionary algorithms
 - Using an evolutionary algorithm for phylogenetic inference
 - Conclusion
+
+# Phylogenetics
+
+Phylogenetics is he study of evolutionary relationships among groups of
+organisms (e.g.  species, populations).
+
+\begin{center}
+\includegraphics[height=0.5\textheight]{figures/darwinsdrawing.pdf}
+\end{center}
