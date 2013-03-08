@@ -30,3 +30,28 @@ organisms (e.g.  species, populations).
 \begin{center}
 \includegraphics[height=0.5\textheight]{figures/darwinsdrawing.pdf}
 \end{center}
+
+# Phylogenetic Trees
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figures/tree_examples.pdf}
+\end{center}
+
+# Alignment
+
+\begin{center}
+\includegraphics[height=0.35\textheight]{figures/insertion.pdf}
+\end{center}
+
+## Aligned Sequences
+
+           CTATCGC---TCATTGATCCAAAAATTT--GATCAAC
+           ACATCAC---TTATTGATCCAATAATTTTTGATCAAC
+           CTACCACATTTAATTGATCCAATGACTT--GACCAAC
+           CTACCACATTTAATTGATCCAATGACTT--GACCAAC
+
+# Using EAs to search for candidate trees
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figures/systems_overview.pdf}
+\end{center}
