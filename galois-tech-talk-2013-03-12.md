@@ -15,9 +15,10 @@
 - A mix of genetics and artificial intelligence methods
 
 ## Outline
+
 - Phylogenetics
-- Phylogenetic inference
 - Evolutionary algorithms
+- Estimating likelihood of a hypothesis
 - Using an evolutionary algorithm for phylogenetic inference
 - Conclusion
 
