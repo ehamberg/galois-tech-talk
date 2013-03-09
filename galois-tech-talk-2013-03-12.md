@@ -146,7 +146,7 @@ In order to use a maximum likelihood approach, we need a model of DNA evolution:
 # EA Cycle
 
 \begin{center}
-\includegraphics[height=0.5\textwidth]{figures/ea_overview.pdf}
+\includegraphics[height=0.7\textheight]{figures/ea_overview.pdf}
 \end{center}
 
 # Using EAs to search for candidate trees
