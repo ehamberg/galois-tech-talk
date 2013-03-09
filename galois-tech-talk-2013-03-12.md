@@ -154,3 +154,32 @@ In order to use a maximum likelihood approach, we need a model of DNA evolution:
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figures/systems_overview.pdf}
 \end{center}
+
+# Results
+
+The following results are from a data set consists of the mitochondrial genomes
+of 20 mammals. After alignment and the removal of gap sites, the DNA sequences
+were 14659 base pairs.
+
+<!--
+The runs were quite consistent and produce trees with similar fitness
+($\sigma_{\text{avg. fitness}}=1560.14$, $\sigma_{\text{max fitness}}=1498.39)$.
+-->
+
+# Results
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figures/mamm20_max_fitness_plot.pdf}
+\end{center}
+
+# Results
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figures/max_avg_min_fitness_plot.pdf}
+\end{center}
+
+# Results
+
+\begin{center}
+\includegraphics[height=0.8\textheight]{figures/mamm20_best_tree.pdf}
+\end{center}
