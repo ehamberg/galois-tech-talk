@@ -110,12 +110,12 @@ data.
 In order to use a maximum likelihood approach, we need a model of DNA evolution:
 
 > - A statistical description of the process of substitution in nucleotide
-> sequences.
-> - Tells us the expected frequency of the different bases at equilibrium and the
-> probability of a specific base change over a branch of length t: $$P\left(j\mid
-> i,t\right)$$
-> - "The probability of seeing base $j$ at the end of a branch of length $t$ given
-> that the start of the branch has base $i$."
+>   sequences.
+> - Tells us the expected frequency of the different bases at equilibrium and
+>   the probability of a specific base change over a branch of length $t$:
+>   $$P\left(j\mid i,t\right)$$
+> - "The probability of seeing base $j$ at the end of a branch of length $t$
+>   given that the start of the branch has base $i$."
 
 # Branch Lengths
 
@@ -164,7 +164,7 @@ where $D_{i}$ is the data at site $i$.
 
 The likelihood of a tree with observations of one site $i$ is then the sum of
 the probabilities of all possible combinations of states which might have
-existed at the m interior nodes $n_{1}\ldots n_{m}$:
+existed at the $m$ interior nodes $n_{1}\ldots n_{m}$:
 
 
 \begin{eqnarray*}
@@ -257,7 +257,7 @@ $z$ can take ($A$ , $C$ , $G$ or $T$).
 # Calculating the Likelihood of a Tree
 
 Once these four values have been computed they need not be computed again if we
-find the same states in the nodes below z for a different site. This approach
+find the same states in the nodes below $z$ for a different site. This approach
 greatly reduces the number of calculations that needs to be done.
 
 The algorithm is recursive and computes $L_{k}^{\left(i\right)}\left(s\right)$
