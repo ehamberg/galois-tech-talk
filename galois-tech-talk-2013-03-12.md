@@ -162,8 +162,8 @@ where $D_{i}$ is the data at site $i$.
 
 # Calculating the Likelihood of a Tree
 
-The likelihood of a tree with observations of one state is then the sum of the
-probabilities of all possible combinations of states which might have
+The likelihood of a tree with observations of one site $i$ is then the sum of
+the probabilities of all possible combinations of states which might have
 existed at the m interior nodes $n_{1}\ldots n_{m}$:
 
 
@@ -175,7 +175,7 @@ P\left(D_{i}\mid\mathbb{T}\right) & = & \sum_{n_{1}}\sum_{n_{2}}\ldots\sum_{n_{m
  &  & +P\left(A,C,C,G,\; T,T,T\mid\mathbb{T}\right)\nonumber
 \end{eqnarray*}
 
-where $s_{1},s_{2},\ldots,s_{n}$ are the leaf nodes' states at that one ($A$,
+where $s_{1},s_{2},\ldots,s_{n}$ are the leaf nodes' states at that site ($A$,
 $C$, $C$, $G$ in our case). Each summation runs over the four possible states
 $A$, $C$, $G$, and $T$.
 
@@ -222,7 +222,7 @@ summation signs as far to the right as possible we get
 \begin{align*}
 P\left(D_{i}\mid\mathbb{T}\right)= & \phantom{\times}\sum_{x}P\left(x\right)\\
  & \times\left(\sum_{y}P\left(y\mid x,t_{5}\right)P\left(A\mid y,t_{1}\right)P\left(C\mid y,t_{2}\right)\right)\\
- & \times\left(\sum_{z}P\left(z\mid x,t_{0}\right)P\left(C\mid z,t_{3}\right)P\left(G\mid z,t_{4}\right)\right)\text{.}
+ & \times\left(\sum_{z}P\left(z\mid x,t_{6}\right)P\left(C\mid z,t_{3}\right)P\left(G\mid z,t_{4}\right)\right)\text{.}
 \end{align*}
 
 # Calculating the Likelihood of a Tree
@@ -230,7 +230,7 @@ P\left(D_{i}\mid\mathbb{T}\right)= & \phantom{\times}\sum_{x}P\left(x\right)\\
 \begin{align*}
 P\left(D_{i}\mid\mathbb{T}\right)= & \phantom{\times}\sum_{x}P\left(x\right)\\
  & \times\left(\sum_{y}P\left(y\mid x,t_{5}\right)P\left(A\mid y,t_{1}\right)P\left(C\mid y,t_{2}\right)\right)\\
- & \times\left(\sum_{z}P\left(z\mid x,t_{0}\right)P\left(C\mid z,t_{3}\right)P\left(G\mid z,t_{4}\right)\right)\text{.}
+ & \times\left(\sum_{z}P\left(z\mid x,t_{6}\right)P\left(C\mid z,t_{3}\right)P\left(G\mid z,t_{4}\right)\right)\text{.}
 \end{align*}
 
 To compute this we work our way up the tree by calculating the conditional
@@ -254,16 +254,14 @@ This can be read as "the probability of everything seen at and below a node with
 state $z$". There will be four such quantities -- one for each possible value
 $z$ can take ($A$ , $C$ , $G$ or $T$).
 
-
 # Calculating the Likelihood of a Tree
 
 Once these four values have been computed they need not be computed again if we
-find the same states in the nodes below z for a different site. This dynamic
-programming approach greatly reduces the number of calculations that needs to be
-done.
+find the same states in the nodes below z for a different site. This approach
+greatly reduces the number of calculations that needs to be done.
 
 The algorithm is recursive and computes $L_{k}^{\left(i\right)}\left(s\right)$
-at each node from the same values from the nodes immediately below it:
+at each node from the values from the nodes immediately below it:
 
 $$L_{k}^{\left(i\right)}\left(s\right)=\left(\sum_{x}P\left(x\mid s,t_{\ell}\right)L_{\ell}^{(i)}\left(x\right)\right)\left(\sum_{y}P\left(y\mid s,t_{m}\right)L_{m}^{\left(i\right)}\left(y\right)\right)$$
 
@@ -287,10 +285,10 @@ These values will act as the base cases of the recursive algorithm.
 # Calculating the Likelihood of a Tree
 
 The end result of the algorithm for a site $i$ is the average of
-$\pi_{s}L_{root}^{\left(i\right)}\left(s\right)$ -- the values at the topmost
+$L_{root}^{\left(i\right)}\left(s\right)$ -- the values at the topmost
 node in the tree weighted by their prior probabilities:
 
-$$L^{\left(i\right)}=\sum_{s}\left(\pi_{s}L_{root}^{\left(i\right)}\left(s\right)\right)$$
+$$L^{\left(i\right)}=\sum_{s}\left(L_{root}^{\left(i\right)}\left(s\right)\right)$$
 
 The probability of the entire tree is then the product of the probabilities for
 each site:
