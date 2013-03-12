@@ -67,17 +67,18 @@ trees describing the evolutionary relationship among them:
 - Heuristic search algorithms are therefore often applied to find an
   approximation to the most likely phylogenetic tree.
 
-# Alignment
+# A Short Note on Alignment
+
+Sequences are *aligned* before being used for phylogenetic inference.
 
 \begin{center}
-\includegraphics[height=0.35\textheight]{figures/insertion.pdf}
+\includegraphics[height=0.25\textheight]{figures/insertion.pdf}
 \end{center}
 
 ## Aligned Sequences
 
            CTATCGC---TCATTGATCCAAAAATTT--GATCAAC
            ACATCAC---TTATTGATCCAATAATTTTTGATCAAC
-           CTACCACATTTAATTGATCCAATGACTT--GACCAAC
            CTACCACATTTAATTGATCCAATGACTT--GACCAAC
 
 # Methods for Doing Phylogenetic Inference
@@ -94,15 +95,15 @@ data.
   formulating a probabilistic model of evolution and using statistical methods
   such as maximum likelihood estimation.
 
-# Maximum Likelihood
+# Maximum Likelihood Method
 
 - Tries to use all of the available sequence data.
-- Constructs a probabilistic model of evolution and then uses the statistical
-  method of maximum likelihood to assign a likelihood to a tree.
+- Constructs a probabilistic model of evolution and then uses maximum
+  likelihood to assign a likelihood to a tree.
 - Requires more computation than parsimony and distance methods, but have
   several desirable properties.
-- ML maximization will converge to the correct parameter values and the smallest
-  possible variance around these values as the amount of data grows.
+- ML maximization will converge to the correct parameter values and the
+  smallest possible variance around these values as the amount of data grows.
 
 # Model of Evolution
 
@@ -133,16 +134,6 @@ In order to use a maximum likelihood approach, we need a model of DNA evolution:
 
 <!-- This is an idealized example -->
 
-# Calculating the Likelihood of a Tree
-
-A phylogenetic tree's "fitness" -- as seen from the evolutionary algorithm -- is
-its likelihood in light of the genetic data and a model of evolution.
-
-- The actual species, which will always be leaf nodes in a tree, are called
-  *operational taxonomical units* while the interior nodes are called
-  *hypothetical taxonomical units*.
-- The latter are inferred ancestral species of which we have no observed data.
-
 # Calculating the Likelihood of a Tree -- Example
 
 In this simple example tree we only look at one site. We have observed the
@@ -156,13 +147,14 @@ hypothetical states of the hypothetical taxonomical unites are *x*, *y*, and
 
 # Calculating the Likelihood of a Tree
 
-When calculating the likelihood of a whole phylogenetic tree we assume the following:
+When calculating the likelihood of a whole phylogenetic tree we have to
+make some assumptions to make the calculation feasible.
 
 ## Assumption one
 
 > Evolution in different sites is independent.
 
-The first assumption lets us decompose the likelihood of a tree given the data,
+This assumption lets us decompose the likelihood of a tree given the data,
 $P\left(D\mid\mathbb{T}\right)$, into a product of $n$ terms -- one for each
 site:$$L=P\left(D\mid\mathbb{T}\right)=\prod_{i=1}^{n}P\left(D_{i}\mid\mathbb{T}\right)$$
 
@@ -170,8 +162,8 @@ where $D_{i}$ is the data at site $i$.
 
 # Calculating the Likelihood of a Tree
 
-The likelihood of a tree with observations of one state <!-- ? --> is then the
-sum of the probabilities of all possible combinations of states which might have
+The likelihood of a tree with observations of one state is then the sum of the
+probabilities of all possible combinations of states which might have
 existed at the m interior nodes $n_{1}\ldots n_{m}$:
 
 
@@ -199,8 +191,8 @@ $A$, $C$, $G$, and $T$.
 
 > Evolution in different lineages is independent.
 
-The second assumption allows us to decompose the probability on the right side
-of into a product of terms:
+The second assumption allows us to decompose the probability on the right
+side of the previous expression into a product of terms:
 
 \begin{eqnarray*}
 P\left(A,C,C,G,x,y,z\mid\mathbb{T}\right) & = & \phantom{\times}P\left(x\right)\times P\left(y\mid x,t_{5}\right)\nonumber \\
@@ -365,8 +357,6 @@ antenna evolved for a 2006 NASA mission called Space Technology 5 (ST5) -->
 - Trees in GP usually represent computer programs and not all of the operators
   suitable for these trees work for phylogenetic trees due to the strict
   restrictions on their form.
-- A recombination operator that works for phylogenetic trees is the
-  Prune-Delete-Graft (PDG) operator.
 
 # Mutation
 
